@@ -1,6 +1,4 @@
 def get_product_karatsuba_style(x, y):
-    if x == 0 and y == 0:
-        return 0
     if x < 10 and y < 10:
         return x * y
 
@@ -20,14 +18,6 @@ def get_product_karatsuba_style(x, y):
     bd = get_product_karatsuba_style(b, d)
     a_plus_b_times_c_plus_d = get_product_karatsuba_style(a + b, c + d)
     gauss_trick = a_plus_b_times_c_plus_d - bd - ac
-
-    print("ac", ac)
-    print("bd", bd)
-    print("a_plus_b_times_c_plus_d: ", a_plus_b_times_c_plus_d)
-    print("gauss_trick: ", gauss_trick)
-    print("(10**max_n) * ac : ", (10 ** max_n) * ac)
-    print("(10 ** (max_n // 2)) * gauss_trick: ", (10 ** (max_n // 2)) * gauss_trick)
-    print("bd: ", bd)
 
     return (10 ** n) * ac + ((10 ** (n // 2)) * gauss_trick) + bd
 
